@@ -11,6 +11,8 @@ tenantParams = {
 # Detect package manager and set appropriate path
 fuse_path = if Dir.exist?("./Pods/HyperSDK")
   "./Pods/HyperSDK/Fuse.rb"
+elsif ENV['BUILD_DIR'] && Dir.exist?("#{ENV['BUILD_DIR'].sub(/Build.*/, '')}SourcePackages/artifacts/hypersdk-ios/HyperSDK")
+  "#{ENV['BUILD_DIR'].sub(/Build.*/, '')}SourcePackages/artifacts/hypersdk-ios/HyperSDK/Fuse.rb"
 elsif Dir.exist?(File.join(__dir__, "../../hypersdk-ios/HyperSDK"))
   File.join(__dir__, "../../hypersdk-ios/HyperSDK/Fuse.rb")
 else

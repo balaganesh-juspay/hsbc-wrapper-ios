@@ -18,7 +18,13 @@ let package = Package(
     targets: [
         .target(
             name: "HSBCPaymentsSDKSource",
-            path: "Sources/HSBCPaymentsSDK"
+            path: "Sources/HSBCPaymentsSDK",
+            publicHeadersPath: ".",
+            cSettings: [
+                .headerSearchPath("Constants"),
+                .headerSearchPath("Utils"),
+                .headerSearchPath("CheckoutLite")
+            ]
         ),
         .target(
             name: "HSBCPaymentsSDKDependencies",
