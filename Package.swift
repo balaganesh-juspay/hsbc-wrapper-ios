@@ -9,7 +9,7 @@ let package = Package(
     products: [
         .library(
             name: "HSBCPaymentsSDK",
-            targets: ["HSBCPaymentsSDKSource", "HSBCPaymentsSDKDependencies"]
+            targets: ["HSBCPaymentsSDK", "HSBCPaymentsSDKDependencies"]
         )
     ],
     dependencies: [
@@ -17,7 +17,7 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "HSBCPaymentsSDKSource",
+            name: "HSBCPaymentsSDK",
             path: "Sources/HSBCPaymentsSDK",
             publicHeadersPath: ".",
             cSettings: [
